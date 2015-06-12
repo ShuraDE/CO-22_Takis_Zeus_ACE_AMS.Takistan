@@ -1,0 +1,30 @@
+//add scipt:
+aceMenu (only for fraggi and shura)
+medicEquipment (basic loadout)
+spawnInjured (verletzte auf truck der in die base fährt)
+vitalMonitor (anzeige für die vital werte)
+
+4.14
++ flaggen
++ barracken
++ rednerpult
++ enviroment
+
+4.13
+weg schicken von probanden mit kollabierungs option
+
+4.12
+probanden eingeführt
+ace menü mit submenüs versehen
+
+4.11
+remove medevac via interaction menu on truck (as fraggi / shura)
+
+4.10
+verlegung der verletzten "produktion" ganz südlich auf den flughafen
+
+4.9
+loadout
+
+4.8
+verletzten generierung

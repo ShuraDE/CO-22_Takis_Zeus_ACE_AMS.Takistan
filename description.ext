@@ -1,0 +1,30 @@
+
+// respawn = "GROUP";
+// respawn = "SIDE";
+// respawn = "BASE";
+respawn = "INSTANT";
+respawndelay = 100;
+
+// aiKills = 1;
+
+disabledAI = 1;
+
+
+//briefing = 1;
+
+onLoadName = "ACE3 AMS Training";
+author = "Simmax, Fraggi, XiviD, Shura 2015 /v4.14";
+OnLoadMission = "Gruppe-Adler.de";
+overviewPicture="intro.jpg";
+
+enableDebugConsole = true;
+
+class Header
+{
+ gameType = COOP; 
+ minPlayers = 1;  
+ maxPlayers = 26; 
+};
+
+
+
