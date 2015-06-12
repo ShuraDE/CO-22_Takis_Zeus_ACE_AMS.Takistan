@@ -1,5 +1,7 @@
 // ACE Menü für Training
-if (name player == "Shura" || name player == "Fraggi") then {
+
+//deaktiviert da training abgeschlossen ist
+//if (name player == "Shura" || name player == "Fraggi") then {
 	
 	//class types for ace menu
 	_TypesAllBLUFOR =["B_officer_F","B_Soldier_TL_F","B_soldier_exp_F","B_Soldier_F","B_soldier_LAT_F","B_soldier_AR_F","B_Soldier_A_F","B_medic_F","B_Helipilot_F","ARC_GER_Tropentarn_medic","ARC_GER_Tropentarn_soldier_AR","ARC_GER_Tropentarn_soldier_exp","ARC_GER_Tropentarn_soldier_GL","ARC_GER_Tropentarn_Soldier_Base","ARC_GER_Tropentarn_soldier_M","B_engineer_F"];
@@ -62,4 +64,4 @@ if (name player == "Shura" || name player == "Fraggi") then {
 	["B_engineer_F", 0,  ["ACE_MainActions", "proband"], _actionExitProband] call ace_interact_menu_fnc_addActionToClass;
 	["B_engineer_F", 0,  ["ACE_MainActions", "proband"], _actionExitProbandCollLow] call ace_interact_menu_fnc_addActionToClass;
 	["B_engineer_F", 0,  ["ACE_MainActions", "proband"], _actionExitProbandCollHigh] call ace_interact_menu_fnc_addActionToClass;
-}
+//}
