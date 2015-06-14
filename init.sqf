@@ -32,11 +32,8 @@ if !(isNull player) then {
 	call compile preprocessFile "fnc\medicEquipment.sqf";
 };
 
-//ACE Menü für Fraggi und Shura
+//define ace interaction extension
 call compile preprocessFile "fnc\aceMenu.sqf";
-
-//Equiment
-
 
 //Adler Intro
 // ***********************************************************************************
