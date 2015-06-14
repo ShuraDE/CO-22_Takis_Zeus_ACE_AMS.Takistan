@@ -4,6 +4,11 @@ medicEquipment (basic loadout)
 spawnInjured (verletzte auf truck der in die base fährt)
 vitalMonitor (anzeige für die vital werte)
 
+4.16
++ pain level
++ aktive injektionen
++ respawn delay 0
+
 4.15
  multiplayer verbesserungen
  --> healthMonitor wird vom Server ausgeführt wenn public call

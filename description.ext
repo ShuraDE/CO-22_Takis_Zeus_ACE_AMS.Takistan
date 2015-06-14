@@ -3,7 +3,7 @@
 // respawn = "SIDE";
 // respawn = "BASE";
 respawn = "INSTANT";
-respawndelay = 100;
+respawndelay = 0;
 
 // aiKills = 1;
 
