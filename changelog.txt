@@ -1,8 +1,16 @@
 //add scipt:
 aceMenu (only for fraggi and shura)
 medicEquipment (basic loadout)
-spawnInjured (verletzte auf truck der in die base fährt)
-vitalMonitor (anzeige für die vital werte)
+spawnInjured (verletzte auf truck der in die base fÃ¤hrt)
+vitalMonitor (anzeige fÃ¼r die vital werte)
+
+4.15
+ multiplayer verbesserungen
+ --> healthMonitor wird vom Server ausgefÃ¼hrt wenn public call
+ --> delay fÃ¼r medevac anlieferung um crashes zu verhindern
+ --> fahrverhalten auf vorsichtig gesetzt wenn nahe der base
+ 
+ base npc auf STOP TRUE gesetzt
 
 4.14
 + flaggen
@@ -14,14 +22,14 @@ vitalMonitor (anzeige für die vital werte)
 weg schicken von probanden mit kollabierungs option
 
 4.12
-probanden eingeführt
-ace menü mit submenüs versehen
+probanden eingefÃ¼hrt
+ace menÃ¼ mit submenÃ¼s versehen
 
 4.11
 remove medevac via interaction menu on truck (as fraggi / shura)
 
 4.10
-verlegung der verletzten "produktion" ganz südlich auf den flughafen
+verlegung der verletzten "produktion" ganz sÃ¼dlich auf den flughafen
 
 4.9
 loadout
