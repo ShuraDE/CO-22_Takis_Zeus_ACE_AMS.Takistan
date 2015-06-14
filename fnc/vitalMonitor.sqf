@@ -130,7 +130,7 @@ if (isServer || _publicHint == 0) then {
 		
 		if (_duration > 0) then {
 			if (_publicHint == 1) then {
-				[format["%1 \n%2 \n%3 \n%4 \n%5 \n%6 \n%7",_msg_target, _msg_puls, _msg_bloodPresure, _msg_bloodVolume, _msg_pain, _msg_inVitro, _msg_info],"hintSilent",true,true] call BIS_fnc_MP;
+				[format["%1 \n%2 \n%3 \n%4 \n%5",_msg_target, _msg_puls, _msg_bloodPresure, _msg_bloodVolume, _msg_info],"hintSilent",true,true] call BIS_fnc_MP;
 			} else {
 				hintSilent format["%1 \n%2 \n%3 \n%4 \n%5 \n%6 \n%7",_msg_target, _msg_puls, _msg_bloodPresure, _msg_bloodVolume, _msg_pain, _msg_inVitro, _msg_info];
 			};	
