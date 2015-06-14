@@ -1,4 +1,14 @@
 
+
+
+
+if (spawn_injured_cooldown_active) then {
+	waitUntil {hint "medevac cooldown active\nspawn delayed"; sleep 1;!spawn_injured_cooldown_active};
+	hint "";
+};
+spawn_injured_cooldown_active = true;
+	
+
 _groupSize = 10;
 if (count _this >= 1) then {_groupSize = _this select 0;};
 
@@ -36,6 +46,8 @@ _i = 17;
 
 
 _wp =_grpMedEvac addWaypoint [getMarkerPos "medEvacEnd", 0];
+sleep 5;
+spawn_injured_cooldown_active = false;
 
 deleteGroup _grpTango;
 deleteGroup _grpMedEvac;

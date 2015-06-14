@@ -13,7 +13,7 @@ disabledAI = 1;
 //briefing = 1;
 
 onLoadName = "ACE3 AMS Training";
-author = "Simmax, Fraggi, XiviD, Shura 2015 /v4.15";
+author = "Simmax, Fraggi, XiviD, Shura 2015 /v4.16";
 OnLoadMission = "Gruppe-Adler.de";
 overviewPicture="intro.jpg";
 

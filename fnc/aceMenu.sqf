@@ -12,15 +12,25 @@
 	_actionVitalMonitor60 = ["vital_monitor", "60s", "", {[_target, 60] spawn adl_fnc_vital_monitor}, {true;}] call ace_interact_menu_fnc_createAction;
 
 	//health monitor for all players
+	/*
 	_actionVitalMonitorPublic10 = ["vital_monitor", "10s", "", {[_target, 10, 1] spawn adl_fnc_vital_monitor}, {true;}] call ace_interact_menu_fnc_createAction;
 	_actionVitalMonitorPublic30 = ["vital_monitor", "30s", "", {[_target, 30, 1] spawn adl_fnc_vital_monitor}, {true;}] call ace_interact_menu_fnc_createAction;
 	_actionVitalMonitorPublic60 = ["vital_monitor", "60s", "", {[_target, 60, 1] spawn adl_fnc_vital_monitor}, {true;}] call ace_interact_menu_fnc_createAction;
 	_actionVitalMonitorPublic120 = ["vital_monitor", "2 min", "", {[_target, 120, 1] spawn adl_fnc_vital_monitor}, {true;}] call ace_interact_menu_fnc_createAction;
 	_actionVitalMonitorPublic300 = ["vital_monitor", "5 min", "", {[_target, 300, 1] spawn adl_fnc_vital_monitor}, {true;}] call ace_interact_menu_fnc_createAction;	
+	*/
+	
+	_actionVitalMonitorPublic10 = ["vital_monitor", "10s", "", {[[[_target, 10, 1],adl_fnc_vital_monitor],"BIS_fnc_spawn",false,true] call BIS_fnc_MP}, {true;}] call ace_interact_menu_fnc_createAction;
+	_actionVitalMonitorPublic30 = ["vital_monitor", "30s", "", {[[[_target, 30, 1],adl_fnc_vital_monitor],"BIS_fnc_spawn",false,true] call BIS_fnc_MP}, {true;}] call ace_interact_menu_fnc_createAction;
+	_actionVitalMonitorPublic60 = ["vital_monitor", "60s", "", {[[[_target, 60, 1],adl_fnc_vital_monitor],"BIS_fnc_spawn",false,true] call BIS_fnc_MP}, {true;}] call ace_interact_menu_fnc_createAction;
+	_actionVitalMonitorPublic120 = ["vital_monitor", "2 min", "", {[[[_target, 120, 1],adl_fnc_vital_monitor],"BIS_fnc_spawn",false,true] call BIS_fnc_MP}, {true;}] call ace_interact_menu_fnc_createAction;
+	_actionVitalMonitorPublic300 = ["vital_monitor", "5 min", "", {[[[_target, 300, 1],adl_fnc_vital_monitor],"BIS_fnc_spawn",false,true] call BIS_fnc_MP}, {true;}] call ace_interact_menu_fnc_createAction;
 	
 	//lieferung (verletzte und probanden)
-	_actionGetNewMedEvac_10 = ["new_medevac", "ETA 50s, n10, Injured", "", {[10] spawn adl_fnc_spawn_injured;}, {true;}] call ace_interact_menu_fnc_createAction;
-	_actionGetNewMedEvac_5 = ["new_medevac", "ETA 50s, n5, Injured", "", {[5] spawn adl_fnc_spawn_injured;}, {true;}] call ace_interact_menu_fnc_createAction;
+	//_actionGetNewMedEvac_10 = ["new_medevac", "ETA 50s, n10, Injured", "", {[10] spawn adl_fnc_spawn_injured;}, {true;}] call ace_interact_menu_fnc_createAction;
+	//_actionGetNewMedEvac_5 = ["new_medevac", "ETA 50s, n5, Injured", "", {[5] spawn adl_fnc_spawn_injured;}, {true;}] call ace_interact_menu_fnc_createAction;
+	_actionGetNewMedEvac_10 = ["new_medevac", "ETA 50s, n10, Injured", "", {[[[10],adl_fnc_spawn_injured],"BIS_fnc_spawn",false,true] call BIS_fnc_MP}, {true;}] call ace_interact_menu_fnc_createAction;
+	_actionGetNewMedEvac_5 = ["new_medevac", "ETA 50s, n5, Injured", "", {[[[5],adl_fnc_spawn_injured],"BIS_fnc_spawn",false,true] call BIS_fnc_MP}, {true;}] call ace_interact_menu_fnc_createAction;	
 	_actionGetNewProband = ["new_proband", "ETA 10s, n1, Healthy", "", {[] spawn adl_fnc_spawn_proband;}, {true;}] call ace_interact_menu_fnc_createAction;
 	
 	//removing orders

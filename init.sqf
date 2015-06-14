@@ -1,6 +1,11 @@
 ﻿waituntil {!isnil "bis_fnc_init"}; 																	// Indikator gibt aus das alle bis BIS Funktionen fertig geladen sind  
 
 
+//global vars
+
+spawn_injured_cooldown_active = false;
+
+
 //precompile sqf scripts
 adl_fnc_vital_monitor = compile preprocessFile "fnc\vitalMonitor.sqf";
 adl_fnc_spawn_injured = compile preprocessFile "fnc\spawnInjured.sqf";
@@ -10,7 +15,6 @@ adl_fnc_destroy_proband = compile preprocessFile "fnc\exitProband.sqf";
 
 //no LR Radio for team leaders;
 tf_no_auto_long_range_radio = true;
-
 
 S_INIT = false;  																					// Variablen deklariert
 S_CLIENT = false; 
@@ -47,7 +51,7 @@ sleep 2;
 titleCut ["", "BLACK IN", 2];
 
 waitUntil {time > 3};
-	["<img size= '6' shadow='false' image='pic\gruppe-adler.paa'/><br/><t size='.9' color='#FFFFFF'> F.A.T.A Zeus ACE3 - AMS Training</t>",0,0,3,4] spawn BIS_fnc_dynamicText;
+	["<img size= '6' shadow='false' image='pic\gruppe-adler.paa'/><br/><t size='.9' color='#FFFFFF'>Zeus ACE3 - AMS Training</t>",0,0,3,4] spawn BIS_fnc_dynamicText;
 };
 
 

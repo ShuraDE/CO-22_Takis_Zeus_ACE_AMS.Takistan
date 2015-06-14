@@ -1112,7 +1112,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={5870.3184,83.040001,11396.357};
+					position[]={5881.395,83.040001,11408.763};
 					azimut=-61.9622;
 					class args
 					{
@@ -1383,7 +1383,7 @@ class Mission
 					leader=1;
 					rank="LIEUTENANT";
 					skill=0.60000002;
-					init="removeAllWeapons this; removeBackpack this;  removeHeadgear this";
+					init="removeAllWeapons this; removeBackpack this;  removeHeadgear this; this stop true";
 					syncId=10;
 					synchronizations[]={11};
 				};
@@ -1405,7 +1405,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="removeAllWeapons this; removeBackpack this;  removeHeadgear this";
+					init="removeAllWeapons this; removeBackpack this;  removeHeadgear this; this stop true";
 					syncId=11;
 					synchronizations[]={10};
 				};
@@ -2264,6 +2264,34 @@ class Mission
 			name="spawnProband";
 			type="Empty";
 			colorName="ColorRed";
+		};
+	};
+	class Sensors
+	{
+		items=2;
+		class Item0
+		{
+			position[]={6029.1665,83.040001,11499.44};
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expActiv="{ _x setBehaviour ""AWARE""; } forEach units thislist ";
+			class Effects
+			{
+			};
+		};
+		class Item1
+		{
+			position[]={5925.9565,83.040001,11468.016};
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expActiv="{ _x stop true; } forEach units thislist ";
+			class Effects
+			{
+			};
 		};
 	};
 };

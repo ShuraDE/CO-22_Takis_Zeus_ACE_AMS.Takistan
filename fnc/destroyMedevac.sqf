@@ -1,4 +1,5 @@
 _veh = _this select 0;
+driver _veh stop false;
 
 _wp = (group (driver _veh)) addWaypoint [getMarkerPos "medEvacExit", 0];
 
