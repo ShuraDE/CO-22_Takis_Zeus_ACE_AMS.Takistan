@@ -26,6 +26,7 @@ _fnc_Loop = {
             hintsilent "He is dead";
         };
         [JK_ViralMonitorPFH] call CBA_fnc_removePerFrameHandler;
+        JK_ViralMonitorPFH = nil;
     };
     _tmpCalc = _pulse-_lastPulse;
     _msg_pulse_history = call {
