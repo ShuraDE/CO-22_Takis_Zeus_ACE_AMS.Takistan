@@ -13,8 +13,8 @@
 */
 
 _publicHint = if (count _this >= 3) then { _this select 2 } else { false };
-_duration = if (count _this >= 2) then { _this select 1 }  else { 10 };
 _target = if (count _this >= 1) then { _this select 0 } else { if (isNull cursorTarget) then { cursorTarget }else{ player }};
+_time = if (count _this >= 2) then { _this select 1 }  else { 3 };
 
 _fnc_Loop = {
     _target = _this select 0;
