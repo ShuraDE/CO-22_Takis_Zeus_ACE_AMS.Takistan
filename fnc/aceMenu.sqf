@@ -74,4 +74,4 @@
 	["B_engineer_F", 0,  ["ACE_MainActions", "proband"], _actionExitProband] call ace_interact_menu_fnc_addActionToClass;
 	["B_engineer_F", 0,  ["ACE_MainActions", "proband"], _actionExitProbandCollLow] call ace_interact_menu_fnc_addActionToClass;
 	["B_engineer_F", 0,  ["ACE_MainActions", "proband"], _actionExitProbandCollHigh] call ace_interact_menu_fnc_addActionToClass;
-//}
+//};
