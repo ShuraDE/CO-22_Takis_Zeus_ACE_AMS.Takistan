@@ -69,15 +69,6 @@ _fnc_Loop = {
         true
     } count _appliedMeds;
 
-
-
-
-    {
-        _msgAppliedMed pushBack ((_x select 1) select 0);
-        true
-    } count _appliedMeds;
-
-
     _msg_pulse = format["Pulse: %1 %2", round(_pulse), _msg_pulse_history];
     _msg_bloodPressure = format["Bloodpresure: %1/%2 %3", round _diastolicBloodPressure, round _systolicBloodPressure, _msg_bloodPressure_history];
     _msg_bloodVolume = format["Bloodvolume: %1",_bloodVolume];
