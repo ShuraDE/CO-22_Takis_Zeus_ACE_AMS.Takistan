@@ -1,4 +1,4 @@
-// ACE Menü für Training
+// ACE MenÃ¼ fÃ¼r Training
 
 //deaktiviert da training abgeschlossen ist
 //if (name player == "Shura" || name player == "Fraggi") then {
@@ -39,7 +39,7 @@
 	_actionExitProbandCollLow = ["exit_proband_coll", "Collapse low", "", {[_target, 6, 35] spawn adl_fnc_destroy_proband;}, {true;}] call ace_interact_menu_fnc_createAction;
 	_actionExitProbandCollHigh = ["exit_proband_coll", "Collapse high", "", {[_target, 6, 140] spawn adl_fnc_destroy_proband;}, {true;}] call ace_interact_menu_fnc_createAction;
 	
-	//Submenü Definition
+	//SubmenÃ¼ Definition
 	_actionSubMenuVitals = ["vital_monitoring","Vitalmonitor","", {}, {true;}] call ace_interact_menu_fnc_createAction;
 	_actionSubMenuVitalsPublic = ["vital_monitoring_public","For all Player","", {}, {true;}] call ace_interact_menu_fnc_createAction;
 	_actionSubMenuMedevac = ["medevac","Medevac","", {}, {true;}] call ace_interact_menu_fnc_createAction;
@@ -54,11 +54,14 @@
 		[_x, 0, ["ACE_MainActions","vital_monitoring"], _actionVitalMonitor10] call ace_interact_menu_fnc_addActionToClass;
 		[_x, 0, ["ACE_MainActions","vital_monitoring"], _actionVitalMonitor30] call ace_interact_menu_fnc_addActionToClass;
 		[_x, 0, ["ACE_MainActions","vital_monitoring"], _actionVitalMonitor60] call ace_interact_menu_fnc_addActionToClass;	
-		[_x, 0, ["ACE_MainActions","vital_monitoring","vital_monitoring_public"], _actionVitalMonitorPublic10] call ace_interact_menu_fnc_addActionToClass;
-		[_x, 0, ["ACE_MainActions","vital_monitoring","vital_monitoring_public"], _actionVitalMonitorPublic30] call ace_interact_menu_fnc_addActionToClass;
-		[_x, 0, ["ACE_MainActions","vital_monitoring","vital_monitoring_public"], _actionVitalMonitorPublic60] call ace_interact_menu_fnc_addActionToClass;		
-		[_x, 0, ["ACE_MainActions","vital_monitoring","vital_monitoring_public"], _actionVitalMonitorPublic120] call ace_interact_menu_fnc_addActionToClass;		
-		[_x, 0, ["ACE_MainActions","vital_monitoring","vital_monitoring_public"], _actionVitalMonitorPublic300] call ace_interact_menu_fnc_addActionToClass;		
+		
+		if (player in ["Zeus1","Zeus2"]) then {
+			[_x, 0, ["ACE_MainActions","vital_monitoring","vital_monitoring_public"], _actionVitalMonitorPublic10] call ace_interact_menu_fnc_addActionToClass;
+			[_x, 0, ["ACE_MainActions","vital_monitoring","vital_monitoring_public"], _actionVitalMonitorPublic30] call ace_interact_menu_fnc_addActionToClass;
+			[_x, 0, ["ACE_MainActions","vital_monitoring","vital_monitoring_public"], _actionVitalMonitorPublic60] call ace_interact_menu_fnc_addActionToClass;		
+			[_x, 0, ["ACE_MainActions","vital_monitoring","vital_monitoring_public"], _actionVitalMonitorPublic120] call ace_interact_menu_fnc_addActionToClass;		
+			[_x, 0, ["ACE_MainActions","vital_monitoring","vital_monitoring_public"], _actionVitalMonitorPublic300] call ace_interact_menu_fnc_addActionToClass;		
+		};
 
 		
 		[_x, 1, ["ACE_SelfActions"], _actionSubMenuProband] call ace_interact_menu_fnc_addActionToClass;
