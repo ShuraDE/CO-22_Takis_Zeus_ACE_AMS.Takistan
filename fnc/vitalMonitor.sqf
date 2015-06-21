@@ -19,10 +19,10 @@ _subject = if (count _this >= 1) then { _this select 0 } else { if !(isNull curs
 if !(isNil "JK_ViralMonitorPFH") exitWith { hintSilent "Tracker schon Attached" };
 
 //preset historic values
-_hist = nil;
-if (_public) then  { _hist = dataStorage;} else { _hist = player; } ;
-_hist setVariable ["ace_medical_heartRate_hist", _pulse, _publicHint];
-_hist setVariable ["ace_medical_bloodPressure_hist", _bloodPressure, _publicHint];		
+_histInit = nil;
+if (_public) then  { _histInit = dataStorage;} else { _histInit = player; } ;
+_histInit setVariable ["ace_medical_heartRate_hist", _subject getVariable ["ace_medical_heartRate_hist",80], _public];
+_histInit setVariable ["ace_medical_bloodPressure_hist", _subject getVariable ["ace_medical_bloodPressure_hist", [80,120]], _public];		
 
 if (isServer || !(_public)) then {
 
