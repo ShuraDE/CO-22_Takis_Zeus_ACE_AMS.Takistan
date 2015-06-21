@@ -8,7 +8,7 @@
 
 	//health monitor
 	_actionVitalMonitorAppend = ["vital_monitor", "append", "", {[_target] spawn adl_fnc_vital_monitor_enable}, {true;}] call ace_interact_menu_fnc_createAction;
-	_actionVitalMonitorAppendPublic = ["vital_monitor", "append for all", "", {[_target, true] spawn adl_fnc_vital_monitor_enable}, {true;}] call ace_interact_menu_fnc_createAction;
+	_actionVitalMonitorAppendPublic = ["vital_monitor", "append for all", "", {[[[_target, true],"fnc\vitalMonitor.sqf"],"BIS_fnc_execVM",false,true] call BIS_fnc_MP}, {true;}] call ace_interact_menu_fnc_createAction;
 	_actionVitalMonitorRemove = ["vital_monitor", "remove", "", {[_target] spawn adl_fnc_vital_monitor_disable}, {true;}] call ace_interact_menu_fnc_createAction;
 
 	//lieferung (verletzte und probanden)

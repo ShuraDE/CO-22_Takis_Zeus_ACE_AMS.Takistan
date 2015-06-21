@@ -16,9 +16,18 @@ _public = if (count _this >= 2) then { _this select 1 } else { false };
 _subject = if (count _this >= 1) then { _this select 0 } else { if !(isNull cursorTarget) then { cursorTarget }else{ player }};
 //_time = if (count _this >= 2) then { _this select 1 }  else { 3 };
 
-if !(isNil "JK_ViralMonitorPFH") exitWith { hintSilent "Tracker schon Attached" };
 
-//preset historic values
+//server monitor overwrite
+if (_public && isServer && !(isNil "JK_ViralMonitorPFH")) then
+{	
+	[JK_ViralMonitorPFH] call CBA_fnc_removePerFrameHandler;
+	JK_ViralMonitorPFH = nil;
+};
+
+if !(isNil "JK_ViralMonitorPFH") exitWith { hintSilent "Tracker schon Attached" };	
+	
+	
+//pre set historic values
 _histInit = nil;
 if (_public) then  { _histInit = dataStorage;} else { _histInit = player; } ;
 _histInit setVariable ["ace_medical_heartRate_hist", _subject getVariable ["ace_medical_heartRate_hist",80], _public];

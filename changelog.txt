@@ -4,6 +4,10 @@ medicEquipment (basic loadout)
 spawnInjured (verletzte auf truck der in die base fährt)
 vitalMonitor (anzeige für die vital werte)
 
+
+4.20
++ EH for vitalMonitor
+
 4.16
 + pain level
 + aktive injektionen
