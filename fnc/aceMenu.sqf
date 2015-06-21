@@ -35,7 +35,7 @@
 		[_x, 0, ["ACE_MainActions","vital_monitoring"], _actionVitalMonitorAppend] call ace_interact_menu_fnc_addActionToClass;
 		[_x, 0, ["ACE_MainActions","vital_monitoring"], _actionVitalMonitorRemove] call ace_interact_menu_fnc_addActionToClass;
 		
-		if (player in ["Zeus1","Zeus2"] || name player == "Shura") then {
+		if (player in [Zeus1,Zeus2] || name player == "Shura") then {
 			[_x, 0, ["ACE_MainActions","vital_monitoring"], _actionVitalMonitorAppendPublic] call ace_interact_menu_fnc_addActionToClass;
 		};
 
