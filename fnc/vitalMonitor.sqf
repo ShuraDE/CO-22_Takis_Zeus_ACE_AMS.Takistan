@@ -18,9 +18,11 @@ _subject = if (count _this >= 1) then { _this select 0 } else { if !(isNull curs
 
 if !(isNil "JK_ViralMonitorPFH") exitWith { hintSilent "Tracker schon Attached" };
 
-
-_lastPulse = round (_subject getVariable ["ace_medical_heartRate",80]);
-_lastBloodPressure = _subject getVariable ["ace_medical_bloodPressure", [80,120]];
+//preset historic values
+_hist = nil;
+if (_public) then  { _hist = dataStorage;} else { _hist = player; } ;
+_hist setVariable ["ace_medical_heartRate_hist", _pulse, _publicHint];
+_hist setVariable ["ace_medical_bloodPressure_hist", _bloodPressure, _publicHint];		
 
 if (isServer || !(_public)) then {
 
@@ -28,8 +30,14 @@ if (isServer || !(_public)) then {
 		_target = (_this select 0) select 0;	
 		_publicHint = (_this select 0) select 1;
 		
-		_lastPulse  = (_this select 0) select 2;
-		_lastBloodPressure = (_this select 0) select 3;
+		_hist = nil;
+		 if (_publicHint) then  { _hist = dataStorage;} else { _hist = player; } ;
+		
+		_lastPulse = round (_hist getVariable ["ace_medical_heartRate_hist",80]);
+		_lastBloodPressure = _hist getVariable ["ace_medical_bloodPressure_hist", [80,120]];
+		
+
+		
 		
 		if !(alive _target) exitWith {
 			if (_publicHint) then {
@@ -40,9 +48,6 @@ if (isServer || !(_public)) then {
 			[JK_ViralMonitorPFH] call CBA_fnc_removePerFrameHandler;
 			JK_ViralMonitorPFH = nil;
 		};
-
-		_appliedMeds = _target getVariable ["ace_medical_allUsedMedication", []];  //usefull
-		_painLevel = _target getVariable ["ace_medical_pain", 0];  //usefull
 
 		_pulse = round (_target getVariable ["ace_medical_heartRate",80]);
 		_bloodPressure = _target getVariable ["ace_medical_bloodPressure", [80,120]];
@@ -58,7 +63,6 @@ if (isServer || !(_public)) then {
 			if (_tmpCalc > 2) exitWith {"+++"};
 			if (_tmpCalc > 1) exitWith {"++"};
 			if (_tmpCalc > 0) exitWith {"+"};
-			if (_tmpCalc == 0) exitWith {""};
 			""
 		};
 
@@ -75,22 +79,13 @@ if (isServer || !(_public)) then {
 		};
 		
 		//renew last values
-		_lastPulse = _pulse;
-		_lastBloodPressure = _bloodPressure;
+		_hist setVariable ["ace_medical_heartRate_hist",_pulse, _publicHint];
+		_hist setVariable ["ace_medical_bloodPressure_hist", _bloodPressure, _publicHint];		
+		
 		
 		_msg_pulse = format["Pulse: %1 %2", round(_pulse), _msg_pulse_history];
 		_msg_bloodPressure = format["Bloodpresure: %1/%2 %3", round _diastolicBloodPressure, round _systolicBloodPressure, _msg_bloodPressure_history];
 		_msg_bloodVolume = format["Bloodvolume: %1",_bloodVolume];
-
-		/*
-		_msgAppliedMed = [];
-		{
-			_msgAppliedMed pushBack ((_x select 1) select 0);
-			true
-		} count _appliedMeds;
-		_msg_inVitro = format["Active Substances:\n%1",str(_msgAppliedMed)];
-		_msg_pain = format["Pain Level: %1", _painLevel];
-		*/
 
 		_message = format["Person: %1 \n%2 \n%3 \n%4", name _target, _msg_pulse, _msg_bloodPressure, _msg_bloodVolume];
 
@@ -99,6 +94,6 @@ if (isServer || !(_public)) then {
 		} else {
 			hintSilent _message;
 		};
-
-	},1,[_subject,_public, _lastPulse, _lastBloodPressure]] call CBA_fnc_addPerFrameHandler;
+		
+	},1,[_subject,_public]] call CBA_fnc_addPerFrameHandler;
 };

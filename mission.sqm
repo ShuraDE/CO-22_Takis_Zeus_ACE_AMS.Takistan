@@ -2040,12 +2040,13 @@ class Mission
 		class Item64
 		{
 			position[]={5849.8857,83.040001,11394.142};
-			azimut=103.24033;
+			azimut=103.24;
 			special="NONE";
 			id=108;
 			side="EMPTY";
 			vehicle="Infostand_2_EP1";
 			skill=0.40000001;
+			text="dataStorage";
 			description="Sanitäter";
 		};
 		class Item65
