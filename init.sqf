@@ -7,7 +7,9 @@ spawn_injured_cooldown_active = false;
 
 
 //precompile sqf scripts
-adl_fnc_vital_monitor = compile preprocessFile "fnc\vitalMonitor.sqf";
+adl_fnc_vital_monitor_enable = compile preprocessFile "fnc\vitalMonitor.sqf";
+adl_fnc_vital_monitor_disable = compile preprocessFile "fnc\disableMonitor.sqf";
+
 adl_fnc_spawn_injured = compile preprocessFile "fnc\spawnInjured.sqf";
 adl_fnc_destroy_medevac = compile preprocessFile "fnc\destroyMedevac.sqf";
 adl_fnc_spawn_proband = compile preprocessFile "fnc\spawnProband.sqf";
@@ -32,8 +34,13 @@ if !(isNull player) then {
 	call compile preprocessFile "fnc\medicEquipment.sqf";
 };
 
+//set monitor variable to nil
+JK_ViralMonitorPFH = nil;
+
 //define ace interaction extension
 call compile preprocessFile "fnc\aceMenu.sqf";
+
+
 
 //Adler Intro
 // ***********************************************************************************
