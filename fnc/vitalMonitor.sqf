@@ -18,10 +18,16 @@ _subject = if (count _this >= 1) then { _this select 0 } else { if !(isNull curs
 
 
 //server monitor overwrite
-if (_public && isServer && !(isNil "JK_ViralMonitorPFH")) then
+if (_public && isServer &&) then
 {	
-	[JK_ViralMonitorPFH] call CBA_fnc_removePerFrameHandler;
-	JK_ViralMonitorPFH = nil;
+	//reset server monitor if set
+	if ( !(isNil "JK_ViralMonitorPFH")) then {
+		[JK_ViralMonitorPFH] call CBA_fnc_removePerFrameHandler;
+		JK_ViralMonitorPFH = nil;
+	};
+	
+	//ensure each player has it removed, server overrides active monitor
+	[[[],"fnc\disableMonitor.sqf"],"BIS_fnc_execVM",true,true] call BIS_fnc_MP;
 };
 
 if !(isNil "JK_ViralMonitorPFH") exitWith { hintSilent "Tracker schon Attached" };	
