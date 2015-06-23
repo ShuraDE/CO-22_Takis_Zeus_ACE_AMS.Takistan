@@ -1485,7 +1485,7 @@ class Mission
 		};
 		class Item9
 		{
-			position[]={5944.104,83.040001,11505.038};
+			position[]={5805.7202,83.040001,11418.481};
 			azimut=27.857058;
 			id=53;
 			side="EMPTY";
@@ -2169,7 +2169,7 @@ class Mission
 		};
 		class Item3
 		{
-			position[]={5911.5239,83.040001,11454.438};
+			position[]={5922.7446,83.040001,11460.315};
 			name="medEvacEnd";
 			type="Empty";
 			colorName="ColorRed";
@@ -2210,7 +2210,7 @@ class Mission
 		};
 		class Item1
 		{
-			position[]={5925.9565,83.040001,11468.016};
+			position[]={5936.856,83.040001,11478.204};
 			activationBy="WEST";
 			repeating=1;
 			interruptable=1;
