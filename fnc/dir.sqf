@@ -10,4 +10,6 @@ while {_a =_a + 1; _a > 0} do {
 	
 	hint format["looking in %1 direction\nbody direction is %2\nloc %3 %4 %5\ndirVisual %6\nstance %7",(round _dirWatching), getDir player, (_posBody select 0), (_posBody select 1), (_posBody select 2), getDirVisual player, stance player];
 	sleep 1;
+	
+	//stances: ["STAND", "CROUCH", "PRONE", "UNDEFINED", ""]
 };
